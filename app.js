@@ -7,7 +7,7 @@ const path = require('path');
 const settings = require('./settings');
 
 mongoose.connect(
-    process.env.MONGODB || settings.MONGODB,
+    process.env.MONGODB_URI || settings.MONGODB,
     {
         useNewUrlParser: true
     }
