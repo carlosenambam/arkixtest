@@ -85,11 +85,19 @@ router.patch('/:bookId', (req, res, next) => {
 
     var id = req.params.bookId;
 
-    var updateOps = {
-        title: req.body.title,
-        pages: req.body.pages,
-        author: req.body.author
-    };
+    var updateOps = {};
+
+    if (typeof req.body.title !== 'undefined') {
+        updateOps['title'] = req.body.title;
+    }
+
+    if (typeof req.body.pages !== 'undefined') {
+        updateOps['pages'] = req.body.pages;
+    }
+
+    if (typeof req.body.author !== 'undefined') {
+        updateOps['author'] = req.body.author;
+    }
 
     Book.update({_id:id}, {$set: updateOps})
       .exec()
