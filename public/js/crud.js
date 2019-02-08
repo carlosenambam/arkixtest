@@ -1,5 +1,5 @@
 jQuery(document).ready(function($) {
-  var url = 'http://localhost:3000/books/';
+  var url = 'https://arkix-test.herokuapp.com/';
   var booksData = {};
   var editForm = $('#book-form').clone()
       .removeClass('create').addClass('update');
